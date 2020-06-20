@@ -5,6 +5,9 @@
  */
 package nhom5.dialog;
 
+import java.awt.Point;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.BufferedOutputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -26,6 +29,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import nhom5.gui.LoginFrm;
 import org.apache.poi.ss.usermodel.BorderStyle;
 import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.IndexedColors;
@@ -59,6 +63,9 @@ public class QuanLySinhVienDialog extends javax.swing.JFrame {
         initComponents();
         addControls();
         loadDataTable();
+        LoginFrm.FrameDragListener frameDragListener = new LoginFrm.FrameDragListener(this);
+        this.addMouseListener(frameDragListener);
+        this.addMouseMotionListener(frameDragListener);
     }
     
     private static void Export(DefaultTableModel tableModel) {
@@ -128,6 +135,28 @@ public class QuanLySinhVienDialog extends javax.swing.JFrame {
             vec.add(sv.getQueQuan());
             vec.add(sdf.format(sv.getNgaySinh()));
             dtm.addRow(vec);
+        }
+    }
+    public static class FrameDragListener extends MouseAdapter {
+
+        private final JFrame frame;
+        private Point mouseDownCompCoords = null;
+
+        public FrameDragListener(JFrame frame) {
+            this.frame = frame;
+        }
+
+        public void mouseReleased(MouseEvent e) {
+            mouseDownCompCoords = null;
+        }
+
+        public void mousePressed(MouseEvent e) {
+            mouseDownCompCoords = e.getPoint();
+        }
+
+        public void mouseDragged(MouseEvent e) {
+            Point currCoords = e.getLocationOnScreen();
+            frame.setLocation(currCoords.x - mouseDownCompCoords.x, currCoords.y - mouseDownCompCoords.y);
         }
     }
     private void addControls(){
@@ -227,7 +256,7 @@ public class QuanLySinhVienDialog extends javax.swing.JFrame {
         btnDong.setBackground(new java.awt.Color(255, 118, 117));
         btnDong.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnDong.setForeground(new java.awt.Color(255, 255, 204));
-        btnDong.setIcon(new javax.swing.ImageIcon("D:\\K2 - Nam3\\Java\\BTL\\BTL_Nhom5\\images\\back32.png")); // NOI18N
+        btnDong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nhom5/dialog/back32_1.png"))); // NOI18N
         btnDong.setText("Đóng");
         btnDong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -238,7 +267,7 @@ public class QuanLySinhVienDialog extends javax.swing.JFrame {
         btnXuatFile.setBackground(new java.awt.Color(108, 92, 231));
         btnXuatFile.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnXuatFile.setForeground(new java.awt.Color(255, 255, 255));
-        btnXuatFile.setIcon(new javax.swing.ImageIcon("D:\\K2 - Nam3\\Java\\BTL\\BTL_Nhom5\\images\\excel32.png")); // NOI18N
+        btnXuatFile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nhom5/dialog/excel32.png"))); // NOI18N
         btnXuatFile.setText("Xuất file");
         btnXuatFile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
