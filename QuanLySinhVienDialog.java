@@ -256,7 +256,7 @@ public class QuanLySinhVienDialog extends javax.swing.JFrame {
         btnDong.setBackground(new java.awt.Color(255, 118, 117));
         btnDong.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnDong.setForeground(new java.awt.Color(255, 255, 204));
-        btnDong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nhom5/dialog/back32_1.png"))); // NOI18N
+        btnDong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nhom5/images/back32.png"))); // NOI18N
         btnDong.setText("Đóng");
         btnDong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -267,7 +267,7 @@ public class QuanLySinhVienDialog extends javax.swing.JFrame {
         btnXuatFile.setBackground(new java.awt.Color(108, 92, 231));
         btnXuatFile.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnXuatFile.setForeground(new java.awt.Color(255, 255, 255));
-        btnXuatFile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nhom5/dialog/excel32.png"))); // NOI18N
+        btnXuatFile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nhom5/images/excel32.png"))); // NOI18N
         btnXuatFile.setText("Xuất file");
         btnXuatFile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

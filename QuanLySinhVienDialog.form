@@ -203,7 +203,7 @@
               <Color blue="cc" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/nhom5/dialog/back32_1.png"/>
+              <Image iconType="3" name="/nhom5/images/back32.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="&#x110;&#xf3;ng"/>
           </Properties>
@@ -223,7 +223,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/nhom5/dialog/excel32.png"/>
+              <Image iconType="3" name="/nhom5/images/excel32.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Xu&#x1ea5;t file"/>
           </Properties>
